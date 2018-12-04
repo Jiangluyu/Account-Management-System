@@ -4,23 +4,28 @@
 #include<fstream>
 #include<ctime>
 #include<Windows.h>
-
+#include<iomanip>
+#include<vector>
 #include"Account.h"
 #include"BankAccount.h"
-#include"List_stock.h"
-#include"List_bank.h"
 #include"Sort.h"
-#include"StockAccount.h"
+#include"StockAccount.h" 
+
+#include <yvals.h>
+#if (_MSC_VER >= 1600)
+#define __STDC_UTF_16__
+#endif
+#include "mex.h" 
+#include <engine.h>
 
 using namespace std;
-/*
-char* getTime()
-{
-	time_t seconds;
-	seconds = time(NULL);
-	tm * timeinfo;
-	timeinfo = localtime(&seconds);
-	std::cout << "The current local time and date is:" << asctime(timeinfo);
-	return asctime(timeinfo);
-}
-*/
+
+void printTime();
+void mainMenu(BankAccount* bank, StockAccount* stock);
+void displayMainMenu();
+void StockMenu(StockAccount* stock);
+void BankMenu(BankAccount* bank);
+void displayCommonMenu();
+void displayBankMenu();
+void SettingMenu(StockAccount* stock);
+void displaySettingMenu();
